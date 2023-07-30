@@ -53,10 +53,10 @@ export function Login() {
       if (isAxiosError(error)) {
         if (
           error.response &&
-          error.response.status >= 400 &&
-          error.response.status <= 500
+          error.response.data.code >= 400 &&
+          error.response.data.code <= 500
         ) {
-          setError(error.response.data.message);
+          setError(error.response.data.error);
         }
       }
     }
@@ -155,17 +155,17 @@ export function Login() {
                   >
                     Get started <ArrowRight className="ml-2" size={16} />
                   </button>
-                  {error && <div className="error_msg">{error}</div>}
+                  {error && <div className="error_msgg">{error}</div>}
                 </div>
               </div>
             </form>
             <ToastContainer />
           </div>
         </div>
-        <div className="h-full w-full">
+        <div className="h-full w-[700px] ">
           <img
-            className="mx-auto h-full w-full rounded-ms object-cover"
-            src="https://images.unsplash.com/photo-1630673245362-f69d2b93880e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            className="mx-auto h-full w-full rounded-ms object-cover "
+            src="https://cdn.freebiesupply.com/logos/large/2x/off-1-logo-png-transparent.png"
             alt=""
           />
         </div>

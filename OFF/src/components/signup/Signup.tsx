@@ -216,13 +216,15 @@ const Signup: React.FC = () => {
       dispatch(setLogin({ user: response.data, token: response.data.tokens }));
       navigate("/dashboard");
     } catch (error) {
+      console.log(error,'error');
+      
       if (isAxiosError(error)) {
         if (
           error.response &&
-          error.response.status >= 400 &&
-          error.response.status <= 500
+          error.response.data.code >= 400 &&
+          error.response.data.code <= 500
         ) {
-          setError(error.response.data.message);
+          setError(error.response.data.error);
         }
       }
     }

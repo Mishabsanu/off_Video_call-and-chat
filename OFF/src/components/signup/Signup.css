@@ -1,5 +1,15 @@
 .error_msg {
-  width: 370px;
+  width: 540px;
+  padding: 15px;
+  margin: 5px 0;
+  font-size: 14px;
+  background-color: #f34646;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+.error_msgg {
+  width: 447px;
   padding: 15px;
   margin: 5px 0;
   font-size: 14px;
