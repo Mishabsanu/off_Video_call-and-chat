@@ -7,6 +7,7 @@ import { Dashboard } from "./components/dashboard/Dashboard";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppSelector } from "./Redux/hooks";
 import ForgetPassword from "./components/forgetPassword/ForgetPassword";
+import ResetPassword from "./components/resetPassword/ResetPassword";
 function App() {
   const tokens = useAppSelector((state) => state.token);
   const loading = useAppSelector((state) => state.loading);
@@ -35,6 +36,7 @@ function App() {
             element={!token ? <Trems /> : <Navigate to="/dashboard" />}
           />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path="/resetPassword/:userId" element={<ResetPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

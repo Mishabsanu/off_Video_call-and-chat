@@ -13,12 +13,22 @@ const userRepositoryImpl = () => {
   const getByEmail = async (email: string) => {
     return UserModel.findOne({ email: email });
   };
+  const getById = async (userId: string) => {
+    return UserModel.findOne({ userId: userId });
+  };
+  const passwordUpdate = async (userId: string,hashedPassword:string) => {
+    return UserModel.findOneAndUpdate({ userId:userId }, { $set: { password: hashedPassword } })
+  };
+
 
 
   return {
     signup,
     login,
     getByEmail,
+    getById,
+    passwordUpdate
+   
 
   };
 };

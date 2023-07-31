@@ -24,6 +24,8 @@ export default function userRouter(express: typeof ExpressApp) {
 
   router.route("/signup").post(controller.signup);
   router.route("/login").post(controller.login);
+  router.route("/forgetPassword").post(controller.forgotPassword);
+  router.route("/resetPassword/:id").post(controller.resetPassword);
 
 
   return router;

@@ -25,6 +25,7 @@ export default async function userLogin(
   const userDataFromDatabase = await userRepository
     .getByEmail(email)
     .catch(utils.throwInternalError("error while fetching user data"));
+  
   if (!userDataFromDatabase)
     throw utils.createError(400, "account with this email not exist");
 

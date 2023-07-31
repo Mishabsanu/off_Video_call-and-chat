@@ -7,10 +7,7 @@ const getConfigs = () => {
       logStyle: "dev",
     },
     cors: {
-      origin: [
-        "*",
-        "http://127.0.0.1:5173",
-      ],
+      origin: ["*", "http://127.0.0.1:5173"],
       credentials: true,
     },
     server: {
@@ -41,6 +38,13 @@ const getConfigs = () => {
       refreshOptions: {
         expiresIn: "365d",
       },
+    },
+    mail: {
+      userMail: process.env.NODEMAIL_USER,
+      userPass: process.env.NODEMAIL_PASS,
+    },
+    CLIENT_URL: {
+      URL: 'http://127.0.0.1:5173/',
     },
   };
 };
